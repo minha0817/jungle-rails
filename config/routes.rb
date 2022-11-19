@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'products#index'
 
   resources :users, only: [:new, :create]
+  resources :login, only: [:new, :create, :destroy]
+
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
@@ -19,7 +21,9 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :new, :create]  
   end
+  
 
+  get '/logout' => 'login#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

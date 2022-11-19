@@ -14,7 +14,17 @@
   <%= render 'layouts/top_nav' %>
 
   <main class="container">
+
+
+    <% if current_user? %>
+      Signed in as <%= @current_user.email %> | <%= link_to 'Signout', '/logout'%>
+    <% else %>
+      <%= link_to 'Login', '/login/new' %> | <%= link_to 'Register', '/users/new' %>
+    <% end %>
+
+
     <%= yield %>
+
   </main>
 
   <%= yield :end_of_body %>
