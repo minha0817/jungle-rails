@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
+  resources :users, only: [:new, :create]
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
     post   :add_item
     post   :remove_item
   end
-
+  
   resources :about, only: [:index]
   resources :orders, only: [:create, :show]
 
