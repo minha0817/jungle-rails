@@ -47,7 +47,7 @@ describe Product do
       expect(@product.errors.full_messages).to include("Price can't be blank")
     end
 
-    it 'should validate "price"' do
+    it 'should validate "quantity"' do
       @category = Category.new(
         name: 'Flowers'
       )
@@ -60,7 +60,7 @@ describe Product do
       expect(@product.errors.full_messages).to include("Quantity can't be blank")
     end
 
-    it 'should validate "price"' do
+    it 'should validate "category"' do
       @category = Category.new(
         name: 'Flowers'
       )
