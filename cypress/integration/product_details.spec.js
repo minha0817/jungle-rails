@@ -1,5 +1,5 @@
 
-describe('example to-do app', () => {
+describe('Jungle app', () => {
     beforeEach(() => {
         cy.visit('http://0.0.0.0:3000/')
     });
